@@ -1,6 +1,6 @@
 FROM registry.ocp4.example.com:8443/ubi8/ubi AS builder
 RUN dnf install -y curl && dnf clean all
-ARG BINARY_URL="http://workstation.lab.example.com/script-bin"
+ARG BINARY_URL="http://workstation.lab.example.com/script.sh"
 RUN curl -Lo /tmp/my-app-binary ${BINARY_URL} && chmod +x /tmp/my-app-binary
 
 FROM  registry.ocp4.example.com:8443/ubi8/ubi
